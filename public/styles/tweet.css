@@ -1,0 +1,19 @@
+article.tweet {
+  border: 3px solid black;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+article.tweet header {
+  margin: 0px 5px 0px 5px;  
+  border-bottom: 3px solid black;
+  background: #f4f1ec;
+}
+
+article.tweet footer {
+  /* border: 3px solid black; */
+  background: #f4f1ec;
+}
+
+

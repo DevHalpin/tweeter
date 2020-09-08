@@ -1,0 +1,18 @@
+header {
+  height: 400px;  
+  background-color: orange;
+  background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

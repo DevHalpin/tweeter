@@ -1,0 +1,30 @@
+.new-tweet {
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 100%;
+}
+
+#tweet-text {
+  border-bottom: 3px solid black;
+  width: 100%;
+  resize: none;
+  outline: none;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  background: #f4f1ec;
+}
+
+button {
+  color: #fff;
+  background: #4056A1;
+  font-family: 'Bungee', sans-serif;
+}
+
+.counter {
+ float: right;
+ font-family: 'Bungee', sans-serif;
+}
+
+.counter.overlimit {
+  color: red;
+}
