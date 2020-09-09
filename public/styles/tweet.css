@@ -3,7 +3,7 @@
 } 
 
 .tweet header {
-  display: inline-block;
+  display: block;
   background-image: none;
   width: 100%
 }
@@ -13,13 +13,14 @@
 }
 
 .h-name {
-  display: inline-block;
+  display: block;
 }
 
 article.tweet header{
   font-family: source sans pro, sans-serif;
   background-color: #f4f1ec;
   height: 100px;
+  margin-top: 0px;
 }
 
 article.tweet {
