@@ -10,6 +10,7 @@
 
 .handle {
   float: right;
+  color: transparent;
 }
 
 .h-name {
@@ -48,6 +49,7 @@ article.tweet {
 .footer-right {
   float: right;
   vertical-align: bottom;
+  color: #4156A1;
   margin-top: -.75em;
 }
 
@@ -55,5 +57,9 @@ article.tweet {
   margin-top: 30px;
 }
 article.tweet:hover{
-  box-shadow: 10px 10px 5px;
+  box-shadow: 10px 10px 5px #A9ACBC;
+}
+
+article.tweet:hover .handle {
+  color: #A9ACBC;
 }
