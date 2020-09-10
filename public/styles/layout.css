@@ -18,7 +18,7 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 /*
@@ -29,4 +29,23 @@ body {
   flex-direction: column;
   margin: 0% 5% 0% 5%;
   width: 90%;
+  overflow-wrap: break-word;
+}
+
+@media only screen and (min-width: 768px)
+{
+  .responsive {
+    display: flex;
+    margin-top: 100px;
+    justify-content: space-evenly;
+    height: 85vh;
+  }
+
+  
+
+  .container {
+    overflow: scroll;
+    width: 60%;
+    margin-top: 20px;
+  }
 }

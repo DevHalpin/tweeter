@@ -6,7 +6,15 @@ header {
   justify-content: center;
   align-items: center;
   background-color: orange;
-  background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
+}
+
+@media only screen and (min-width: 768px)
+{
+  header {
+    width: 400px; 
+    height: 400px;
+  }
+
 }
 
