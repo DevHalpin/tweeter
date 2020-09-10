@@ -5,6 +5,19 @@
  */
 $(document).ready(() => {
 
+  const sanitize = (string) => {
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#x27;',
+        "/": '&#x2F;',
+    };
+    const reg = /[&<>"'/]/ig;
+    return string.replace(reg, (match)=>(map[match]));
+  }
+
   const createTweetElement = (tweetData) => {
 
     let article = $("<article>").addClass("tweet");
@@ -23,7 +36,7 @@ $(document).ready(() => {
       </span>
     </header>
     <p>
-      ${tweetData.content.text}
+      ${sanitize(tweetData.content.text)}
     </p>
     <footer class="foot">
       <span class="footer-left">
@@ -39,6 +52,7 @@ $(document).ready(() => {
   };
 
   const renderTweets = function(tweets) {
+    $("#tweet-container").empty();
     for (tweet of tweets) {
       $('#tweet-container').prepend(createTweetElement(tweet));
     }
@@ -53,7 +67,6 @@ $(document).ready(() => {
       data: $(".create-tweet").serialize(),
     })
     .done(function(data) {
-      $("#tweet-container").empty();
       loadTweets();
     })
   });
