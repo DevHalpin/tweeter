@@ -4,24 +4,11 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(() => {
-  const tweetData = [{
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-    "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-    "created_at": 1461116232227
-  }];
-
-
 
   const createTweetElement = (tweetData) => {
 
     let article = $("<article>").addClass("tweet");
-    const date = moment(tweetData.created_at);
+    const date = moment(tweetData.created_at).fromNow();
 
     article.append(`
     <header>
@@ -55,7 +42,24 @@ $(document).ready(() => {
     for (tweet of tweets) {
       $('#tweet-container').append(createTweetElement(tweet));
     }
+  };
+    
+  $(".create-tweet").on('submit', function (e) {
+    e.preventDefault();
+
+    $.ajax({
+      type: "POST",
+      url: "/tweets/",
+      data: $(".create-tweet").serialize(),
+      done: function(data) {
+        console.log(data.text);
+      }
+    })
+  });
+
+  const loadTweets = function() {
+    $.get("/tweets",renderTweets);
   }
 
-  renderTweets(tweetData);
+  loadTweets(); 
 });
