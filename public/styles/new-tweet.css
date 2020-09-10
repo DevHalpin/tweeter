@@ -1,5 +1,5 @@
 .new-tweet {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   width: 100%;
 }
 
@@ -17,12 +17,12 @@
 button {
   color: #fff;
   background: #4056A1;
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
 }
 
 .counter {
  float: right;
- font-family: 'Bungee', sans-serif;
+ font-family: "Bungee", sans-serif;
 }
 
 .counter.overlimit {
@@ -40,5 +40,5 @@ button {
   width: 80%;
   position: relative;
   font-family: source sans pro, sans-serif;
-  margin: auto;
+  margin: 20px auto;
 } 
