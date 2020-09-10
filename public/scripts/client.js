@@ -64,6 +64,13 @@ $(document).ready(() => {
 
   loadTweets(); 
   $(".error").hide();
+  $(".new-tweet").hide();
+
+  $(".write-tweet").on('click', function(e) {
+    $(".new-tweet").slideToggle();
+    $("#tweet-text").val('').focus();
+    $("#tweet-test, .counter").text(140);
+  })
     
   $(".create-tweet").on('submit', function (e) {
     e.preventDefault(); 
@@ -84,6 +91,8 @@ $(document).ready(() => {
       })
       .done(function(data) {
         loadTweets();
+        $("#tweet-text").val('');
+        $("#tweet-test, .counter").text(140);
       })
     }
   });
