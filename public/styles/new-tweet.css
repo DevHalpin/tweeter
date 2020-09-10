@@ -28,3 +28,17 @@ button {
 .counter.overlimit {
   color: red;
 }
+
+.error-message {
+  text-align: center;
+  color: red;
+}
+
+.error {
+  border: 4px red;
+  border-style: double;
+  width: 80%;
+  position: relative;
+  font-family: source sans pro, sans-serif;
+  margin: auto;
+} 

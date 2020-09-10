@@ -67,11 +67,15 @@ $(document).ready(() => {
     
   $(".create-tweet").on('submit', function (e) {
     e.preventDefault(); 
+    $('.error-message').text('');
+    $(".error").slideUp();
     const text = $("#tweet-text").val();
     if (text === '' || text === null) {
-      alert('Tweet text field is empty!');
+      $(".error").slideDown();
+      $(".error-message").text("🔴 Tweet text field is empty! 🔴");
     } else if (text.length > 140) {
-      alert('Tweet text field is greater than 140');
+      $(".error").slideDown();
+      $(".error-message").text("🔴 Tweet text is longer than 140 characters! 🔴");
     } else {
       $.ajax({
         type: "POST",

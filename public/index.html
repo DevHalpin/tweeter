@@ -48,8 +48,11 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <div class="error">
+          <p class="error-message"></p>
+       </div>
         <h2>Compose Tweet</h2>
-        <form action="/tweets/" method="POST">
+        <form class="create-tweet" action="/tweets/" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div>
@@ -58,34 +61,7 @@
           </div>
         </form>
       </section>
-      <section id ="tweet-container">
-        <!-- <article class="tweet">
-          <header>
-            <span class="h-image">
-              <img src="/images/profile.png">
-            </span>
-            <span class="h-name">
-              <h3>Name</h3>
-            </span>
-            <span class="handle">
-              <h3>@Name</h3>
-            </span>
-          </header>
-          <p>
-            If I have seen further it is by standing on the shoulders of giants
-          </p>
-          <footer class="foot">
-            <span class="footer-left">
-              <h6>10 days ago</h6>
-            </span>
-            <span class="footer-right">
-                <i class='fas fa-flag' style='font-size:24px'></i>
-                <i class='fas fa-retweet' style='font-size:24px'></i>
-                <i class='fas fa-heart' style='font-size:24px'></i>
-            </span>
-          </footer>
-        </article> -->
-      </section>
+      <section id ="tweet-container"></section>
     </main>
   </body>
 </html>
