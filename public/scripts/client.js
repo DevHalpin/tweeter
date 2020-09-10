@@ -40,20 +40,21 @@ $(document).ready(() => {
 
   const renderTweets = function(tweets) {
     for (tweet of tweets) {
-      $('#tweet-container').append(createTweetElement(tweet));
+      $('#tweet-container').prepend(createTweetElement(tweet));
     }
   };
     
   $(".create-tweet").on('submit', function (e) {
-    e.preventDefault();
+    e.preventDefault(); 
 
     $.ajax({
       type: "POST",
       url: "/tweets/",
       data: $(".create-tweet").serialize(),
-      done: function(data) {
-        console.log(data.text);
-      }
+    })
+    .done(function(data) {
+      $("#tweet-container").empty();
+      loadTweets();
     })
   });
 
