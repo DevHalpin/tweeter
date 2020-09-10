@@ -57,23 +57,30 @@ $(document).ready(() => {
       $('#tweet-container').prepend(createTweetElement(tweet));
     }
   };
-    
-  $(".create-tweet").on('submit', function (e) {
-    e.preventDefault(); 
-
-    $.ajax({
-      type: "POST",
-      url: "/tweets/",
-      data: $(".create-tweet").serialize(),
-    })
-    .done(function(data) {
-      loadTweets();
-    })
-  });
 
   const loadTweets = function() {
     $.get("/tweets",renderTweets);
   }
 
   loadTweets(); 
+  $(".error").hide();
+    
+  $(".create-tweet").on('submit', function (e) {
+    e.preventDefault(); 
+    const text = $("#tweet-text").val();
+    if (text === '' || text === null) {
+      alert('Tweet text field is empty!');
+    } else if (text.length > 140) {
+      alert('Tweet text field is greater than 140');
+    } else {
+      $.ajax({
+        type: "POST",
+        url: "/tweets/",
+        data: $(".create-tweet").serialize(),
+      })
+      .done(function(data) {
+        loadTweets();
+      })
+    }
+  });
 });
