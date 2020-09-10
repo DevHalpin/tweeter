@@ -1,31 +1,31 @@
 
-  /*
+/*
   * Sanitize function to prevent XSS
   * Takes in a string and returns sanitized string
   */
- const sanitize = (string) => {
-   const map = {
-     '&': '&amp;',
-     '<': '&lt;',
-     '>': '&gt;',
-     '"': '&quot;',
-     "'": '&#x27;',
-     '/': '&#x2F;',
-    };
-    const reg = /[&<>"'/]/ig;
-    return string.replace(reg, match => map[match]);
+const sanitize = (string) => {
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#x27;',
+    '/': '&#x2F;',
   };
+  const reg = /[&<>"'/]/ig;
+  return string.replace(reg, match => map[match]);
+};
   
-  /*
+/*
   * createTweetElement takes in a data object with tweet info
   * Returns the completed tweet article element
   */
- const createTweetElement = (tweetData) => {
+const createTweetElement = (tweetData) => {
    
-   let article = $('<article>').addClass('tweet');
-   const date = moment(tweetData.created_at).fromNow();
+  let article = $('<article>').addClass('tweet');
+  const date = moment(tweetData.created_at).fromNow();
    
-   article.append(`
+  article.append(`
    <header>
    <span class='h-image'>
    <img src=${tweetData.user.avatars}>
@@ -50,27 +50,27 @@
    <i class='fas fa-heart' style='font-size:24px'></i>
    </span>
    </footer>`);
-   return article;
-  };
+  return article;
+};
   
-  /*
+/*
   * renderTweets takes in an array of tweets
   * and prepends each one into the tweet container
   */
- const renderTweets = function(tweets) {
-   $('#tweet-container').empty();
-   for (const tweet of tweets) {
-     $('#tweet-container').prepend(createTweetElement(tweet));
-    }
-  };
+const renderTweets = function(tweets) {
+  $('#tweet-container').empty();
+  for (const tweet of tweets) {
+    $('#tweet-container').prepend(createTweetElement(tweet));
+  }
+};
   
-  /*
-  * loadTweets pulls tweets from database 
+/*
+  * loadTweets pulls tweets from database
   * and pushes them to renderTweets
   */
- const loadTweets = function() {
-   $.get('/tweets',renderTweets);
-  };
+const loadTweets = function() {
+  $.get('/tweets',renderTweets);
+};
 
 $(document).ready(() => {
   loadTweets();
@@ -100,11 +100,11 @@ $(document).ready(() => {
         url: '/tweets/',
         data: $('.create-tweet').serialize(),
       })
-      .done(function() {
-        loadTweets();
-        $('#tweet-text').val('');
-        $('#tweet-test, .counter').text(140);
-      });
+        .done(function() {
+          loadTweets();
+          $('#tweet-text').val('');
+          $('#tweet-test, .counter').text(140);
+        });
     }
   });
 });
