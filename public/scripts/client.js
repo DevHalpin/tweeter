@@ -77,6 +77,17 @@ $(document).ready(() => {
   $('.error').hide();
   $('.new-tweet').hide();
 
+  $('.container').on('scroll', function() {
+    if ($(this).scrollTop() <= 100) {
+      $('.fa-angle-double-up').addClass('hidden');
+    } else {
+      $('.fa-angle-double-up').removeClass('hidden');
+    }
+  });
+
+  $('.fa-angle-double-up').on('click', function() {
+    $('.container').scrollTop(0);
+  })
   $('.write-tweet').on('click', function() {
     $('.new-tweet').slideToggle();
     $('#tweet-text').val('').focus();
