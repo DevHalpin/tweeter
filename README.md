@@ -9,7 +9,11 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Dependencies
 
+- Body Parser
+- Chance
 - Express
+- MD5
+- Moment
 - Node 5.10.x or above
 
 ## Getting Started
