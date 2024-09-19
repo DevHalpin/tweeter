@@ -4,7 +4,7 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Final Product
 
-!["Main Page"](https://github.com/DevHalpin/tweeter/blob/master/docs/MainScreen.png)
+![Main Page](https://github.com/DevHalpin/tweeter/blob/master/docs/MainScreen.png)
 !["Tweet Error Message"](/docs/ErrorMessage.png)
 
 ## Dependencies
